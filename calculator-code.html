@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>Create Calculator using HTML, CSS and JavScript :- ShareCodePoint</title>
+<style type="text/css">
+div { width:500px; margin-left:30%; margin-top:5%}
+table{ width:100%; border:2px solid #fff; box-shadow:0 0 2px 1px #f1f1f1;}
+input[type="button"]{ border:none; width:100%; padding:10px; font-size:60px; outline:none; height:90px;transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out;}
+input[type="text"]{border:none; width:100%; height:100px; padding:10px; font-size:70px; outline:none; font-weight:normal; color:#555}
+.bgcolornumber{ background-color:#f1f1f1; color:#333; transition: all 0.3s ease-in-out;}
+.bgclear{ background:#CC0000; color:#f9f9f9;transition: all 0.3s ease-in-out;}
+.bgoperationcolor{ background-color:#663399; color:#f9f9f9; transition: all 0.3s ease-in-out;}
+.equal{ background-color:#66CC33; color:#f9f9f9; transition: all 0.3s ease-in-out;}
+.bgcolornumber:hover{ background-color:#222; color:#f5f5f5;transition: all 0.3s ease-in-out;}
+.bgclear:hover{background-color:#FF0000; color:#f5f5f5;transition: all 0.3s ease-in-out;}
+.bgoperationcolor:hover{ background-color:#0033CC;; color:#f9f9f9;transition: all 0.3s ease-in-out;}
+.equal:hover{ background-color:#66FF00; transition: all 0.3s ease-in-out;}
+input[type="text"]:active{ font-size:75px;}
+</style> 
+<script type="text/javascript">
+function cals(buttonValue) 
+{
+if (buttonValue == 'C') 
+{
+   document.getElementById('valueshow').value = '0';
+}
+else 
+  {
+    if(document.getElementById('valueshow').value == '0') 
+ {
+ 
+   document.getElementById('valueshow').value = buttonValue;
+}
+ 
+  else 
+   {
+   
+    document.getElementById('valueshow').value += buttonValue;
+   }
+  }
+ }
+  function cal(equation)  
+  
+  {
+  var answer = eval(equation);
+document.getElementById('valueshow').value = answer;
+ }
+ </script>
+ 
+ <style type="text/css">
+ .ps-btn{ border-radius:1px !important;}
+ </style>
+ 
+</head>
+
+<body>
+<div align="center">
+<form onsubmit="javascript:cal(document.getElementById('valueshow').value);return false;">
+<table align="center">
+<tr>
+<td colspan="4"><input id="valueshow" type="text" value="0"></td>
+</tr>
+<tr>
+<td><input class="bgcolornumber" type="button" value=1 onClick="cals(this.value);"></td>
+<td><input class="bgcolornumber"  type="button" value=2 onClick="cals(this.value);"></td>
+<td><input class="bgcolornumber"  type="button" value=3 onClick="cals(this.value);"></td>
+<td><input class="bgoperationcolor" type="button" value='/' onClick="cals(this.value);"></td>
+</tr>
+<tr>
+<td><input class="bgcolornumber" type="button" value=4 onClick="cals(this.value);"></td>
+<td><input class="bgcolornumber" type="button" value=5 onClick="cals(this.value);"></td>
+<td><input class="bgcolornumber" type="button" value=6 onClick="cals(this.value);"></td>
+<td><input class="bgoperationcolor" type="button" value='x' onClick="cals('*');"></td>
+</tr>
+<tr>
+<td><input class="bgcolornumber" type="button" value=7 onClick="cals(this.value);"></td>
+<td><input class="bgcolornumber" type="button" value=8 onClick="cals(this.value);"></td>
+<td><input class="bgcolornumber" type="button" value=9 onClick="cals(this.value);"></td>
+<td><input class="bgoperationcolor" type="button" value='-' onClick="cals(this.value);"></td>
+</tr>
+<tr>
+<td><input class="bgcolornumber" type="button" value=0 onClick="cals(this.value);"></td>
+<td><input class="bgcolornumber" type="button" value='.' onClick="cals(this.value);"></td>
+<td><input class="bgclear" type="button" value='C' onClick="cals(this.value);"></td>
+<td><input class="bgoperationcolor" type="button" value='+' onClick="cals(this.value);"></td>
+</tr>
+<tr>
+<td colspan="4">
+<input type="button" class="equal" value='=' onClick="cal(document.getElementById('valueshow').value);">
+</td>
+</tr>
+</table>
+</form>
+</div>
+</body>
+</html>
